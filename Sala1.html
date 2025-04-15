@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enviando formulario...</title>
+  <script>
+    window.onload = function() {
+      // URL convertida a /formResponse en vez de /viewform
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfYC9yckmhMz0zjzzm341TUA9TUabcCOatgBdxLctA6UOFTQQ/formResponse?entry.877897917=Sala+1+iSense";
+
+      // Enviar formulario de forma oculta
+      fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors'
+      }).then(() => {
+        console.log("Formulario enviado automáticamente.");
+        // Puedes redirigir a otra página si quieres
+        window.location.href = "https://www.google.com"; // cámbialo si quieres otro destino
+      }).catch(err => {
+        console.error("Error al enviar el formulario:", err);
+      });
+    }
+  </script>
+</head>
+<body>
+  <p>Enviando respuesta automáticamente, espera un momento...</p>
+</body>
+</html>
